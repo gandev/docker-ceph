@@ -30,8 +30,8 @@ RUN cd /tmp ; dpkg-deb -b . /fuse.deb
 RUN cd /tmp ; dpkg -i /fuse.deb
 
 # Ceph repositories
-RUN /usr/bin/wget -q -O- 'https://ceph.com/git/?p=ceph.git;a=blob_plain;f=keys/release.asc' | sudo apt-key add -
-RUN echo "deb http://ceph.com/debian-emperor/ precise main" > /etc/apt/sources.list.d/ceph.list
+RUN /usr/bin/wget -q -O- "https://download.ceph.com/keys/release.asc" | sudo apt-key add -
+RUN echo "deb http://download.ceph.com/debian-hammer/ precise main" > /etc/apt/sources.list.d/ceph.list
 RUN apt-get update
 
 # Ceph Packages
